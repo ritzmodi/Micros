@@ -1,0 +1,38 @@
+
+
+Create a virtual machine using Image WIndows Server 2016 with Visual Stusio 2017 community
+Give it decent size - minimum 16gb ram + 4 cpu
+
+install docker
+
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+
+Install-Package -Name docker -ProviderName DockerMsftProvider
+Start-Service Docker
+pull windowsservercore:latest image
+
+Create a new image using DOckerFile
+
+create azure container registry
+login to azure container registry
+push the image to container registry
+
+Running a task in container
+docker container run microsoft/nanoserver hostname
+
+listing running containers
+docker container ls --all
+
+interactive container
+docker container run --interactive --tty --rm `
+  microsoft/windowsservercore powershell
+Now explore
+ls C:\
+Get-Process
+Get-WindowsFeature
+
+
+Create asp.net core api
+and explore
+
+
